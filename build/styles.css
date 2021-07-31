@@ -1,0 +1,264 @@
+/*
+    Fonts
+*/
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+
+
+/*
+    Variables
+*/
+:root {
+    --fontFamily: 'Spartan', sans-serif;
+    --fontSize: 15px;
+    --veryDarkMagenta: hsl(300, 43%, 22%);
+    --softPink: hsl(333, 80%, 67%);
+    --darkGrayishMagenta: hsl(303, 10%, 53%);
+    --lightGrayishMagenta: hsl(300, 24%, 96%);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: var(--fontFamily);
+    font-size: var(--fontSize);
+    background: url(../images/bg-pattern-top-desktop.svg) 0 0 no-repeat fixed,
+    url(../images/bg-pattern-bottom-desktop.svg) 100% 100% no-repeat fixed;
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/*
+    main container
+*/
+.container {
+    max-width: 1000px;
+    min-height: 100vh;         
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+
+
+/*
+    Message section
+*/
+.message {
+    flex: 1 1 40%;
+    margin-bottom: 50px;
+}
+
+.message h1 {
+    color: var(--veryDarkMagenta);
+    font-size: 2.5rem;
+    padding-bottom: 20px;
+}
+
+.message p {
+    color: var(--darkGrayishMagenta);
+    line-height: 1.7;
+}
+
+
+
+/*
+    Ratings section
+*/
+.ratings {
+    flex: 1 1 60%;
+    padding-left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 50px;
+}
+
+.rating {
+    display: flex;
+    align-items: stretch;
+    font-size: 12px;
+    background: var(--lightGrayishMagenta);
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    color: var(--veryDarkMagenta);
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.rating .stars {
+    display: flex;
+    flex-wrap: no-wrap;
+}
+
+.rating > img {
+    -o-object-fit: scale-down;
+       object-fit: scale-down;
+}
+
+.rating > p {
+    margin-left: 20px;
+}
+
+.rating-1 > * {
+    margin: 5px;
+}
+
+.rating-2 {
+    align-self: center;
+}
+
+.rating-2 > * {
+    margin: 5px;
+}
+
+.rating-3 {
+    align-self: flex-end;
+}
+
+.rating-3 > * {
+    margin: 5px;
+}
+
+
+
+/*
+    Reviews section
+*/
+.reviews {
+    flex: 1 1 100%;
+    height: 35vh;
+    display: flex;
+}
+
+.review {
+    background: var(--veryDarkMagenta);
+    border-radius: 5px;
+    margin-right: 2%;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 25px;
+    font-size: 12px;
+}
+
+.reviews > * {
+    flex: 1 1 33.33%;
+}
+
+.review-1 {
+    align-self: flex-start;
+}
+
+.review-2 {
+    align-self: center;
+}
+
+.review-3 {
+    align-self: flex-end;
+}
+
+.reviewer {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.reviewer img {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    margin-right: 20px;
+}
+
+.reviewer .name {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.reviewer .title {
+    color: var(--softPink);
+    opacity: .7;
+}
+
+.review-text {
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+/*
+    Media queries
+*/
+@media (min-width: 1200px) {
+    .container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 650px) {
+    .container {
+        width: 95%;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+
+    .message {
+        flex: 1 1 100%;
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .ratings {
+        padding-left: 0;
+    }
+
+    .rating {
+        flex-direction: column;
+        align-items: center;
+        justify-content: stretch;
+        padding: auto 0;
+        width: 100%;
+    }
+
+    .rating-1 {
+        align-self: center;
+    }
+
+    .rating-3 {
+        align-self: center;
+    }
+
+    .rating .stars {
+        display: flex;
+        justify-content: center;
+    }
+
+    .rating > p {
+        text-align: start;
+        margin-left: 5px;
+    }
+
+    .reviews {
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+
+    .reviews > * {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+        align-self: center;
+        margin-right: 0;
+    }
+}
